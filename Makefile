@@ -8,13 +8,13 @@ all: assemble
 
 # Сборка из исходников.
 assemble: main.c
-	gcc -Wall main.c -O3 -o main	
+	gcc -Wall main.c -O3 -o HoCiC	
 
 # Сборка и сбор информации в файл. ВРЕМЕННО.
 run: assemble
-	./main >> result.txt
+	./HoCiC >> result.txt
 
 # Удаление ненужных файла.
 clean:
-	rm -rf main
+	rm -rf HoCiC
 	rm -rf result.txt
