@@ -7,14 +7,14 @@
 all: assemble
 
 # Сборка из исходников.
-assemble: main.c
-	gcc -Wall main.c -O3 -o HoCiC	
+assemble: Source/main.c
+	gcc -Wall Source/main.c -O3 -o ./HoCiC	
 
 # Сборка и сбор информации в файл. ВРЕМЕННО.
 run: assemble
-	./HoCiC >> result.txt
+	./HoCiC >> ./result.txt
 
 # Удаление ненужных файла.
 clean:
-	rm -rf HoCiC
-	rm -rf result.txt
+	rm -rf ./HoCiC
+	rm -rf ./result.txt

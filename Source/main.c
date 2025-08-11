@@ -1,6 +1,6 @@
 /* Главная программа Hippothesis-of-Collatsa-in-C:
  * Начало разработки: 08 мая 2024 г.
- * Правка: 15 мая 2024 г.
+ * Правка: 01 октября 2024 г.
  *
  * Задание:
  *
@@ -51,6 +51,25 @@
 // Макросы.
 #define VERSION "0.2" // Версия текущего билда.
 
+// Рекурсивная функция
+long int calculateNumber(long int number)
+{
+	// Если число нечётное...
+	if (number %2) {
+		printf("%ld - нечётное. %ld * 3 + 1 = ", number, number);
+		number = number * 3;
+		number = number + 1;
+		printf("%ld\n", number);
+	} // ... в противном случае оно нечётное.
+	else {
+		printf("%ld - чётное. %ld / 2 = ", number, number);
+		number = number / 2;
+		printf("%ld\n", number);
+	};
+
+	return number;
+};
+
 // Начало главной программы.
 int main(void)
 {
@@ -67,18 +86,9 @@ int main(void)
 	// Бесконечный цикл.
 	while (naturalNumber < 1000000)
 	{
-		// Если натуральное число чётное.
-		if (currentNumber % 2) {
-			printf("%ld - нечётное. %ld * 3 + 1 = ", currentNumber, currentNumber);
-			currentNumber = currentNumber * 3;
-			currentNumber = currentNumber + 1;
-			printf("%ld\n", currentNumber);
-		}
-		else{
-			printf("%ld - чётное. %ld / 2 = ", currentNumber, currentNumber);
-			currentNumber = currentNumber / 2;
-			printf("%ld\n", currentNumber);
-		};
+		// В зависимости от того какое число, чётное или нечётное,
+		// производим над числом математические операции.
+		currentNumber = calculateNumber(currentNumber);
 
 		// Проверяем гипотезу.
 		if (currentNumber == 1) {
